@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+	<head>
+		<meta charset='utf-8' />
+		<title>Таймер До Др Василисы</title>
+		<meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'/>
+		<script type='module' src=''></script>
+		<link href='style.css' rel='stylesheet'>
+		<script type='module' scr='https://unpkg.com/@google/model-viewer/dist/model-viewer.js'></script>
+		<style>
+			model-viewer{
+				width: 400px;
+				height: 600px;
+				margin: 110px;
+			}
+
+
+		</style>
+	</head>
+	<body>
+		<div class='main-text'>ДО ДНЯ РОЖДЕНИЯ:</div>
+		<p1 id='timer' class='main-text3'></p1>
+		<p1 id='timer2' class='main-text2'></p1>
+		<p1 id='timer3' class='main-text2'></p1>
+		<p1 id='timer4' class='main-text2'></p1>
+		<div id='gif' class='gif' class='main-text'>🎂🎂🎂</div>
+	</body>
+	<script>
+			var countDownDate = new Date("Oct 7, 2021 00:00:00").getTime();
+			var countDownFunction = setInterval(function (){
+				var now = new Date().getTime();
+				var distance = countDownDate - now;
+				var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+				var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+				var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+				document.getElementById('timer').innerHTML = 
+					days + 'д '
+				document.getElementById('timer2').innerHTML = 
+					hours + 'ч '
+				document.getElementById('timer3').innerHTML = 
+					minutes + 'м '
+				document.getElementById('timer4').innerHTML = 
+					seconds + 'с '
+				if (distance < 0) {
+					clearInterval(countDownFunction);
+					document.getElementById('gif').innerHTML = 'С Днем Рождения!!!';
+				}
+			})
+		</script>
+	</html>
